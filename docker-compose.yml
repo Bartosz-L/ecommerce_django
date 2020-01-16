@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  rabbitmq:
+    hostname: rabbitmq
+    image: rabbitmq:3-management
+    environment:
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
+    ports:
+      - "5672:5672"
+      - "15672:15672" # rabbit management UI
+  web:
+    build: .
+    hostname: web
+    command: sh -c "python manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+      - "3000:3000"
+    links:
+      - rabbitmq
+  worker:
+    build: .
+    command: sh -c "celery -A ecommerce_project worker -l info --pool=solo"
+    volumes:
+      - .:/app
+    links:
+      - rabbitmq
+    depends_on:
+      - rabbitmq
