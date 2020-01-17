@@ -1,0 +1,42 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+{% block title %}
+    {% if category %}
+        {{ category.title }}
+    {% else %}
+        Products
+    {% endif %}
+{% endblock %}
+{% block content %}
+    <div class="uk-section">
+        <div class="uk-container">
+            <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin uk-box-shadow-xlarge"
+                 uk-grid>
+                <div class="uk-card-media-left uk-cover-container uk-flex uk-flex-middle uk-background-cover uk-light"
+                     data-src="
+                                             {% if product.image %}
+                                                {{ product.image.url }}
+                                             {% else %}
+                                                {% static 'img/no_image.png' %}
+                                             {% endif %}"
+                     uk-img>
+                    <canvas width="300" height="500"></canvas>
+                </div>
+                <div>
+                    <div class="uk-card-body">
+                        <h3 class="uk-card-title uk-heading-bullet">{{ product.name }}</h3>
+                        <h4 class="uk-text-muted uk-margin-remove-top">
+                            <a class="uk-link-heading"
+                               href="{{ product.category.get_absolute_url }}">{{ product.category }}
+                            </a>
+                        </h4>
+                        <h3 class="uk-text-warning uk-margin-remove-top">{{ product.price }} $</h3>
+                        <p>{{ product.description|linebreaks }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

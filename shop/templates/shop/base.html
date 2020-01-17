@@ -5,20 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- Materialize CSS -->
-    <link rel="stylesheet" href="{% static 'libs/materialize/css/materialize.min.css' %}"/>
+    <!-- UIKIT CSS -->
+    <link rel="stylesheet" href="{% static 'libs/uikit/css/uikit.min.css' %}"/>
+    <!-- UIKIT JS -->
+    <script src="{% static 'libs/uikit/js/uikit.min.js' %}"></script>
+    <script src="{% static 'libs/uikit/js/uikit-icons.js' %}"></script>
     {% block additional_css %}{% endblock %}
     <title>{% block title %}Django E-commerce{% endblock %}</title>
 </head>
 <body>
-{% block content %}
+<header class="uk-navbar-container uk-padding-small uk-padding-remove-top uk-padding-remove-bottom" uk-navbar>
+    <div class="uk-navbar-left">
+        <a class="uk-navbar-item uk-logo" href="{% url "shop:product_list" %}">TEA SHOP</a>
+    </div>
 
-{% endblock %}
+    <div class="uk-navbar-right">
+
+        <ul class="uk-navbar-nav">
+            <li class="uk-active"><a href="#">Cart</a></li>
+        </ul>
+
+    </div>
+</header>
+<div class="uk-grid uk-flex-center" uk-grid>
+    {% block content %}
+    {% endblock %}
+</div>
+
 {% block js_code %}
-    <!-- Materialize JS -->
-    <script src="{% static 'libs/materialize/js/materialize.min.js' %}"></script>
 {% endblock %}
 </body>
 </html>
