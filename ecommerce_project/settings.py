@@ -30,6 +30,7 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'shop.apps.ShopConfig',
+    'cart.apps.CartConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -124,3 +125,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 # CELERY_BROKER_URL = 'amqp://0.0.0.0'
 CELERY_BROKER_URL = 'amqp://guest:guest@rabbitmq:5672'
 CELERY_RESULT_BACKEND = 'django-db'
+
+CART_SESSION_ID = 'cart'
