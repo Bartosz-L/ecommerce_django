@@ -1,0 +1,58 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+{% block title %}
+    Cart
+{% endblock %}
+
+{% block content %}
+    <div class="uk-section">
+        <div class="uk-container">
+
+            <table class="uk-table uk-table-hover uk-table-middle uk-table-divider">
+                <thead>
+                <tr>
+                    <th class="uk-table-shrink">Image</th>
+                    <th class="uk-table-expand">Product</th>
+                    <th class="uk-table-expand">Qty.</th>
+                    <th class="uk-table-expand">Delete</th>
+                    <th class="uk-table-expand">Price</th>
+                    <th class="uk-table-expand">Total Price</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                {% for item in cart %}
+                    {% with product=item.product %}
+                        <tr>
+                            <td><img class="uk-border-circle uk-preserve-width"
+                                     src="
+                                             {% if product.image %}
+                                                {{ product.image.url }}
+                                             {% else %}
+                                                {% static 'img/no_image.png' %}
+                                             {% endif %}" alt="product_image" width="40">
+                            </td>
+                            <td>{{ product.name }}</td>
+                            <td>{{ item.quantity }}</td>
+                            <td class="uk-table-link">
+                                <a href="{% url 'cart:cart_remove' product.id %}" uk-icon="icon: trash"></a>
+                            </td>
+                            <td>{{ item.price }} $</td>
+                            <td>{{ item.total_price }} $</td>
+                        </tr>
+                    {% endwith %}
+                {% endfor %}
+                <tr>
+                    <td>Total</td>
+                    <td colspan="4"></td>
+                    <td>{{ cart.get_total_price }} $</td>
+                </tr>
+                </tbody>
+            </table>
+            <p uk-margin class="uk-align-right">
+                <a class="uk-button uk-button-default" href="{% url 'shop:product_list' %}">Continue shopping</a>
+                <a class="uk-button uk-button-primary" href="#">Checkout</a>
+            </p>
+        </div>
+    </div>
+{% endblock %}
