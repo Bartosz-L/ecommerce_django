@@ -27,7 +27,7 @@
                 {% if cart|length > 0 %}
                     <li class="uk-active">
                         <a href="{% url "cart:cart_detail" %}">
-                            Cart <span class="uk-badge uk-margin-small-left">{{ total_items }}</span>
+                            Cart <span class="uk-badge uk-margin-small-left uk-padding-small">{{ total_items }}</span>
                         </a>
                     </li>
                 {% endif %}
