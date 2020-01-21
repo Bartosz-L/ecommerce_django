@@ -22,7 +22,16 @@
     <div class="uk-navbar-right">
 
         <ul class="uk-navbar-nav">
-            <li class="uk-active"><a href="{% url "cart:cart_detail" %}">Cart</a></li>
+
+            {% with total_items=cart|length %}
+                {% if cart|length > 0 %}
+                    <li class="uk-active">
+                        <a href="{% url "cart:cart_detail" %}">
+                            Cart <span class="uk-badge uk-margin-small-left">{{ total_items }}</span>
+                        </a>
+                    </li>
+                {% endif %}
+            {% endwith %}
         </ul>
 
     </div>
