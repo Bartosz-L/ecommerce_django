@@ -1,0 +1,16 @@
+{% extends 'shop/base.html' %}
+
+{% block title %}
+    Order completed
+{% endblock %}
+
+{% block content %}
+    <div class="uk-section uk-width-1-1">
+        <div class="uk-container">
+            <h3 class="uk-heading-divider">Order successful</h3>
+            <p><strong>Thank You!</strong></p>
+            <p>Your order has been placed successfully.</p>
+            <p>Order number: <strong>{{ order.id }}</strong></p>
+        </div>
+    </div>
+{% endblock %}

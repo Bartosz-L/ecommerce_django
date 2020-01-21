@@ -36,12 +36,23 @@
 
     </div>
 </header>
-<div class="uk-grid uk-flex-center" uk-grid>
+<div class="uk-grid" uk-grid>
     {% block content %}
     {% endblock %}
 </div>
 
 {% block js_code %}
+    <script>
+        const elementsList = document.getElementsByTagName('input');
+        for (let elem of elementsList) {
+            if (elem.getAttribute('type') !== 'checkbox') {
+                elem.classList.add('uk-input', 'uk-form-small');
+            }
+            if (elem.getAttribute('type') === 'checkbox') {
+                elem.classList.add('uk-checkbox');
+            }
+        }
+    </script>
 {% endblock %}
 </body>
 </html>
