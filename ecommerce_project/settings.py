@@ -125,7 +125,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 # Celery
 # CELERY_BROKER_URL = 'amqp://0.0.0.0'
-CELERY_BROKER_URL = 'amqp://guest:guest@rabbitmq:5672'
-CELERY_RESULT_BACKEND = 'django-db'
+rabbitmq_url = 'amqp://guest:guest@broker:5672'
+CELERY_BROKER_URL = rabbitmq_url
+CELERY_RESULT_BACKEND = rabbitmq_url
 
 CART_SESSION_ID = 'cart'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
