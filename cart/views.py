@@ -24,8 +24,11 @@ def cart_remove(request, product_id):
     return redirect('cart:cart_detail')
 
 
-def cart_detail(requset):
-    cart = Cart(requset)
-
+def cart_detail(request):
+    cart = Cart(request)
+    for item in cart:
+        item['update_quantity_form'] = CartAddProductForm(
+            initial={'quantity': item['quantity'], 'update': True}
+        )
     context = {'cart': cart}
-    return render(requset, 'cart/detail.html', context=context)
+    return render(request, 'cart/detail.html', context=context)
