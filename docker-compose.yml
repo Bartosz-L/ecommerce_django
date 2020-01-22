@@ -12,6 +12,10 @@ services:
   web:
     build: .
     hostname: web
+    environment:
+      - BRAINTREE_MERCHANT_ID=${BRAINTREE_MERCHANT_ID}
+      - BRAINTREE_PUBLIC_KEY=${BRAINTREE_PUBLIC_KEY}
+      - BRAINTREE_PRIVATE_KEY=${BRAINTREE_PRIVATE_KEY}
     command: sh -c "python manage.py runserver 0.0.0.0:8000"
     volumes:
       - .:/app

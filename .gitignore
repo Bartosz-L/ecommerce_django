@@ -223,3 +223,6 @@ fabric.properties
 # temporary folders
 tmp
 # End of https://www.gitignore.io/api/django,pycharm,visualstudiocode
+
+# environment variables
+.env
