@@ -30,16 +30,18 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
-    'shop.apps.ShopConfig',
-    'cart.apps.CartConfig',
-    'orders.apps.OrdersConfig',
-    'payment.apps.PaymentConfig',
+    'grappelli',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'shop.apps.ShopConfig',
+    'cart.apps.CartConfig',
+    'orders.apps.OrdersConfig',
+    'paypal.standard.ipn',
+    'payment.apps.PaymentConfig',
 ]
 
 MIDDLEWARE = [
@@ -130,6 +132,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 rabbitmq_url = 'amqp://guest:guest@broker:5672'
 CELERY_BROKER_URL = rabbitmq_url
 CELERY_RESULT_BACKEND = rabbitmq_url
+CELERY_TASK_ALWAYS_EAGER = True
 
 CART_SESSION_ID = 'cart'
 
@@ -147,3 +150,8 @@ Configuration.configure(
     BRAINTREE_PRIVATE_KEY
 
 )
+
+PAYPAL_RECEIVER_EMAIL = 'lars-facilitator@post.pl'
+PAYPAL_TEST = True
+
+GRAPPELLI_ADMIN_TITLE = 'TEA SHOP ADMIN'

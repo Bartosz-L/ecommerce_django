@@ -15,12 +15,12 @@ COPY ./requirements.txt /app/
 
 # Install build dependencies
 RUN apk update \
-    && apk add --virtual .build-deps gcc musl-dev \
-    && apk add jpeg-dev zlib-dev libjpeg
+    && apk add --no-cache --virtual .build-deps gcc musl-dev \
+    && apk add jpeg-dev zlib-dev libjpeg cairo-dev pango-dev gdk-pixbuf
 
 # Install project dependencies
 RUN pip3 install --upgrade pip
-RUN pip3 install -r requirements.txt
+RUN pip3 install --no-cache-dir -r requirements.txt
 
 # Delete build dependencies
 RUN apk del .build-deps
