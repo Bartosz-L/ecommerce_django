@@ -10,15 +10,16 @@
 {% endblock %}
 
 {% block breadcrumbs %}
-    <div class="breadcrumbs">
-        <a href="{% url "admin:index" %}">Home</a> &rsaquo;
-        <a href="{% url "admin:orders_order_changelist" %}">Orders</a> &rsaquo;
-        <a href="{% url "admin:orders_order_change" order.id %}">Order {{ order.id }}</a> &rsaquo; Detailed Info
+    <div class="breadcrumbs uk-padding-small">
+        <a class="uk-padding-small" href="{% url "admin:index" %}">Home</a> &rsaquo;
+        <a class="uk-padding-small" href="{% url "admin:orders_order_changelist" %}">Orders</a> &rsaquo;
+        <a class="uk-padding-small" href="{% url "admin:orders_order_change" order.id %}">Order {{ order.id }}</a>
+        &rsaquo; <span class="uk-padding-small">Detailed Info</span>
     </div>
 {% endblock %}
 
 {% block content %}
-    <h3 class="uk-heading-divider">Order {{ order.id }}</h3>
+    <h3 class="uk-heading-divider uk-padding-small">Order {{ order.id }}</h3>
 
     <a class="uk-button uk-button-default uk-button-small" href="#" onclick="window.print();">Print</a>
 
@@ -41,7 +42,7 @@
         </tr>
         <tr>
             <th>Total Price</th>
-            <td>{{ order.get_total_cost }} zł</td>
+            <td>{{ order.get_total_cost }} $</td>
         </tr>
         <tr>
             <th>Status</th>
