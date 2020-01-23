@@ -11,12 +11,12 @@
             <table class="uk-table uk-table-striped uk-table-middle uk-table-divider">
                 <thead>
                 <tr>
-                    <th class="uk-table-shrink">Image</th>
-                    <th class="uk-table-expand">Product</th>
-                    <th class="uk-table-expand">Qty.</th>
-                    <th class="uk-table-expand">Delete</th>
-                    <th class="uk-table-expand">Price</th>
-                    <th class="uk-table-expand">Total Price</th>
+                    <th>Image</th>
+                    <th>Product</th>
+                    <th>Qty.</th>
+                    <th>Delete</th>
+                    <th>Price</th>
+                    <th>Total Price</th>
 
                 </tr>
                 </thead>
@@ -24,7 +24,8 @@
                 {% for item in cart %}
                     {% with product=item.product %}
                         <tr>
-                            <td><img class="uk-border-circle uk-preserve-width"
+                            <td>
+                                <img class="uk-border-circle"
                                      src="
                                              {% if product.image %}
                                                 {{ product.image.url }}
@@ -34,10 +35,12 @@
                             </td>
                             <td>{{ product.name }}</td>
                             <td>
-                                <form action="{% url 'cart:cart_add' product.id %}" method="post">
+                                <form action="{% url 'cart:cart_add' product.id %}" method="post"
+                                      class="uk-flex uk-flex-middle">
                                     {{ item.update_quantity_form.quantity }}
                                     {{ item.update_quantity_form.update }}
-                                    <button type="submit" class="uk-button uk-button-primary uk-button-small">
+                                    <button type="submit"
+                                            class="uk-button uk-button-primary uk-button-small uk-margin-small-left">
                                         Change
                                     </button>
                                     {% csrf_token %}
@@ -51,17 +54,43 @@
                         </tr>
                     {% endwith %}
                 {% endfor %}
+                {% if cart.coupon %}
+                    <tr class="uk-background-secondary uk-text-warning">
+                        <td>Total</td>
+                        <td colspan="4"></td>
+                        <td>{{ cart.get_total_price }} $</td>
+                    </tr>
+                    <tr class="uk-background-secondary uk-text-warning">
+                        <td colspan="2">Coupon "{{ cart.coupon.code }}" {{ cart.coupon.discount }} % discount</td>
+                        <td colspan="3"></td>
+                        <td colspan="1">- {{ cart.get_discount|floatformat:"2" }} $</td>
+                    </tr>
+                {% endif %}
                 <tr class="uk-background-secondary uk-text-warning">
                     <td>Total</td>
                     <td colspan="4"></td>
-                    <td>{{ cart.get_total_price }} $</td>
+                    <td>{{ cart.get_total_price_after_discount|floatformat:"2" }} $</td>
                 </tr>
                 </tbody>
             </table>
-            <p uk-margin class="uk-align-right">
-                <a class="uk-button uk-button-default" href="{% url 'shop:product_list' %}">Continue shopping</a>
-                <a class="uk-button uk-button-primary" href="{% url 'orders:order_create' %}">Checkout</a>
-            </p>
+            <div>
+                <p>Provide coupon code to get a discount</p>
+                <form action="{% url "coupons:apply" %}" method="post">
+                    {{ coupon_apply_form }}
+                    <button type="submit" class="uk-button uk-button-primary uk-button-small">
+                        Submit Coupon
+                    </button>
+                    {% csrf_token %}
+                </form>
+            </div>
+            <div>
+                <p uk-margin class="uk-align-right">
+                    <a class="uk-button uk-button-default uk-button-large" href="{% url 'shop:product_list' %}">Continue
+                        shopping</a>
+                    <a class="uk-button uk-button-primary uk-button-large" href="{% url 'orders:order_create' %}">Checkout</a>
+                </p>
+            </div>
+
         </div>
     </div>
 {% endblock %}
