@@ -56,20 +56,20 @@
                 {% endfor %}
                 {% if cart.coupon %}
                     <tr class="uk-background-secondary uk-text-warning">
-                        <td>Total</td>
-                        <td colspan="4"></td>
-                        <td>{{ cart.get_total_price }} $</td>
+                        <td colspan="2">Basic Price</td>
+                        <td colspan="3"></td>
+                        <td colspan="1">{{ cart.get_total_price }} $</td>
                     </tr>
-                    <tr class="uk-background-secondary uk-text-warning">
+                    <tr class="uk-text-primary">
                         <td colspan="2">Coupon "{{ cart.coupon.code }}" {{ cart.coupon.discount }} % discount</td>
                         <td colspan="3"></td>
-                        <td colspan="1">- {{ cart.get_discount|floatformat:"2" }} $</td>
+                        <td colspan="1">-{{ cart.get_discount|floatformat:"2" }} $</td>
                     </tr>
                 {% endif %}
                 <tr class="uk-background-secondary uk-text-warning">
-                    <td>Total</td>
-                    <td colspan="4"></td>
-                    <td>{{ cart.get_total_price_after_discount|floatformat:"2" }} $</td>
+                    <td colspan="2">Total Cost</td>
+                    <td colspan="3"></td>
+                    <td colspan="1">{{ cart.get_total_price_after_discount|floatformat:"2" }} $</td>
                 </tr>
                 </tbody>
             </table>
