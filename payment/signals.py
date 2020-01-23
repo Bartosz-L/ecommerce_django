@@ -12,13 +12,13 @@ from io import BytesIO
 def payment_notification(sender, **kwargs):
     ipn_obj = sender
     if ipn_obj.payment_status == ST_PP_COMPLETED:
-        # Płatność zakończyła się powodzeniem.
+        # Payment successful.
         order = get_object_or_404(Order, id=ipn_obj.invoice)
-        # Oznaczenie zamówienia jako opłaconego.
+        # Mark order as paid.
         order.paid = True
         order.save()
 
-        # Utworzenie wiadomości e-mail zawierającej rachunek.
+        # Create email containing invoice.
         subject = 'Mój sklep - rachunek nr {}'.format(order.id)
         message = 'W załączniku przesyłamy rachunek dla ostatniego zakupu.'
         email = EmailMessage(subject,
@@ -26,18 +26,18 @@ def payment_notification(sender, **kwargs):
                              'admin@myshop.com',
                              [order.email])
 
-        # Wygenerowanie dokumentu PDF.
+        # Generate PDF file.
         html = render_to_string('orders/order/pdf.html', {'order': order})
         out = BytesIO()
-        stylesheets = [weasyprint.CSS(settings.STATIC_ROOT + 'css/pdf.css')]
+        css = [weasyprint.CSS(settings.STATIC_ROOT + 'css/pdf.css')]
         weasyprint.HTML(string=html).write_pdf(out,
-                                               stylesheets=stylesheets)
-        # Dołączenie pliku w formacie PDF.
+                                               stylesheets=[css,
+                                                            "https://fonts.googleapis.com/css?family=Raleway:400,600&display=swap"])
+        # Attach PDF file.
         email.attach('order_{}.pdf'.format(order.id),
                      out.getvalue(),
                      'application/pdf')
-        # Wysłanie wiadomości e-mail.
+        # Sending an email.
         email.send()
 
-
-valid_ipn_received.connect(payment_notification)
+        valid_ipn_received.connect(payment_notification)
