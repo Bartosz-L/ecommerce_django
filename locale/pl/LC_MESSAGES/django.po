@@ -8,17 +8,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-24 10:41+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2020-01-24 11:11+0000\n"
+"PO-Revision-Date: 2020-01-24 11:35+0000\n"
+"Last-Translator: b'  <>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n"
-"%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n"
-"%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
+"X-Translated-Using: django-rosetta 0.9.3\n"
 
 #: cart/forms.py:11 cart/templates/cart/detail.html:17
 #: orders/templates/orders/order/create.html:26
@@ -66,6 +65,8 @@ msgid ""
 "                                \"%(code)s\" (%(discount)s%% discount)\n"
 "                            "
 msgstr ""
+"\n"
+"\"%(code)s\" (%(discount)s%% zniżki)"
 
 #: cart/templates/cart/detail.html:74
 #: orders/templates/orders/order/create.html:52
@@ -80,15 +81,23 @@ msgstr "Wprowadź kupon aby otrzymać zniżkę"
 msgid "Submit a coupon"
 msgstr "Zaakceptuj kupon"
 
+#: cart/templates/cart/detail.html:93
+msgid "Continue shopping"
+msgstr "Kontynuuj zakupy"
+
+#: cart/templates/cart/detail.html:95
+msgid "Summary"
+msgstr "Podsumowanie"
+
 #: coupons/forms.py:6
 msgid "Coupon"
 msgstr "Kupon"
 
-#: ecommerce_project/settings.py:115
+#: ecommerce_project/settings.py:116
 msgid "english"
 msgstr "angielski"
 
-#: ecommerce_project/settings.py:116
+#: ecommerce_project/settings.py:117
 msgid "polish"
 msgstr "polski"
 
@@ -145,10 +154,11 @@ msgstr "Złóż zamówienie"
 #, python-format
 msgid ""
 "\n"
-"                                        \"%(code)s\" (%(discount)s%% "
-"discount)\n"
+"                                        \"%(code)s\" (%(discount)s%% discount)\n"
 "                                    "
 msgstr ""
+"\n"
+"\"%(code)s\" (%(discount)s%% zniżki)"
 
 #: shop/templates/shop/base.html:15 shop/templates/shop/base.html:20
 msgid "Tea Shop"

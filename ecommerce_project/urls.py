@@ -21,6 +21,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('grappelli/', include('grappelli.urls')),  # grappelli URLS
     path('paypal/', include('paypal.standard.ipn.urls')),
+    path('rosetta/', include('rosetta.urls')),
     path('admin/', admin.site.urls),
     path('cart/', include('cart.urls', namespace='cart')),
     path('orders/', include('orders.urls', namespace='orders')),

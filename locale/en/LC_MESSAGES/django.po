@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-24 10:41+0000\n"
+"POT-Creation-Date: 2020-01-24 11:11+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -78,15 +78,23 @@ msgstr ""
 msgid "Submit a coupon"
 msgstr ""
 
+#: cart/templates/cart/detail.html:93
+msgid "Continue shopping"
+msgstr ""
+
+#: cart/templates/cart/detail.html:95
+msgid "Summary"
+msgstr ""
+
 #: coupons/forms.py:6
 msgid "Coupon"
 msgstr ""
 
-#: ecommerce_project/settings.py:115
+#: ecommerce_project/settings.py:116
 msgid "english"
 msgstr ""
 
-#: ecommerce_project/settings.py:116
+#: ecommerce_project/settings.py:117
 msgid "polish"
 msgstr ""
 
