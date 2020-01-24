@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-24 11:11+0000\n"
-"PO-Revision-Date: 2020-01-24 11:35+0000\n"
+"POT-Creation-Date: 2020-01-24 12:09+0000\n"
+"PO-Revision-Date: 2020-01-24 12:15+0000\n"
 "Last-Translator: b'  <>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -101,6 +101,27 @@ msgstr "angielski"
 msgid "polish"
 msgstr "polski"
 
+#: ecommerce_project/urls.py:27
+msgid "admin/"
+msgstr "admin/"
+
+#: ecommerce_project/urls.py:28
+msgid "cart/"
+msgstr "koszyk/"
+
+#: ecommerce_project/urls.py:29
+msgid "orders/"
+msgstr "zamowienia/"
+
+#: ecommerce_project/urls.py:30
+msgid "payment/"
+msgstr "platnosc/"
+
+#: ecommerce_project/urls.py:31
+#| msgid "Coupon"
+msgid "coupons/"
+msgstr "kupony/"
+
 #: orders/models.py:11
 msgid "First Name"
 msgstr "Imię"
@@ -159,6 +180,23 @@ msgid ""
 msgstr ""
 "\n"
 "\"%(code)s\" (%(discount)s%% zniżki)"
+
+#: orders/urls.py:8
+#| msgid "Created"
+msgid "create/"
+msgstr "utworz/"
+
+#: payment/urls.py:8
+msgid "process/"
+msgstr "platnosc-w-toku/"
+
+#: payment/urls.py:9
+msgid "done/"
+msgstr "platnosc-wykonana/"
+
+#: payment/urls.py:10
+msgid "canceled/"
+msgstr "platnosc-anulowana/"
 
 #: shop/templates/shop/base.html:15 shop/templates/shop/base.html:20
 msgid "Tea Shop"

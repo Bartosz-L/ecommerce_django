@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-24 11:11+0000\n"
+"POT-Creation-Date: 2020-01-24 12:09+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -98,6 +98,26 @@ msgstr ""
 msgid "polish"
 msgstr ""
 
+#: ecommerce_project/urls.py:27
+msgid "admin/"
+msgstr ""
+
+#: ecommerce_project/urls.py:28
+msgid "cart/"
+msgstr ""
+
+#: ecommerce_project/urls.py:29
+msgid "orders/"
+msgstr ""
+
+#: ecommerce_project/urls.py:30
+msgid "payment/"
+msgstr ""
+
+#: ecommerce_project/urls.py:31
+msgid "coupons/"
+msgstr ""
+
 #: orders/models.py:11
 msgid "First Name"
 msgstr ""
@@ -154,6 +174,22 @@ msgid ""
 "                                        \"%(code)s\" (%(discount)s%% "
 "discount)\n"
 "                                    "
+msgstr ""
+
+#: orders/urls.py:8
+msgid "create/"
+msgstr ""
+
+#: payment/urls.py:8
+msgid "process/"
+msgstr ""
+
+#: payment/urls.py:9
+msgid "done/"
+msgstr ""
+
+#: payment/urls.py:10
+msgid "canceled/"
 msgstr ""
 
 #: shop/templates/shop/base.html:15 shop/templates/shop/base.html:20
