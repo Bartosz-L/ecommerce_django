@@ -1,11 +1,12 @@
 {% extends 'shop/base.html' %}
+{% load i18n %}
 {% load static %}
 
 {% block title %}
     {% if category %}
         {{ category.name }}
     {% else %}
-        Products
+        {% trans 'Products' %}
     {% endif %}
 {% endblock %}
 
@@ -13,10 +14,10 @@
     <nav class="uk-card uk-card-default uk-width-1-3@s uk-width-1-5@m " uk-height-viewport="expand: true">
         <div class="uk-card-body">
             <ul class="uk-nav-default uk-nav-parent-icon" uk-nav>
-                <li class="uk-nav-header"><strong>Categories</strong></li>
+                <li class="uk-nav-header"><strong>{% trans 'Categories' %}</strong></li>
                 <li {% if not category %} class="uk-active" {% endif %}>
                     <a href="{% url 'shop:product_list' %}">
-                        <span class="uk-margin-small-right" uk-icon="icon: list"></span> All products</a>
+                        <span class="uk-margin-small-right" uk-icon="icon: list"></span>{% trans 'All Products' %}</a>
                 </li>
                 {% for ctg in categories %}
                     <li {% if category.slug == ctg.slug %} class="uk-active" {% endif %} >
@@ -32,7 +33,8 @@
     </nav>
     <section class="uk-container uk-width-2-3@s uk-width-4-5@m">
         <div class="uk-margin-top">
-            <h3 class="uk-heading-divider">{% if category %}{{ category.name }}{% else %}Products{% endif %}</h3>
+            <h3 class="uk-heading-divider">
+                {% if category %}{{ category.name }}{% else %}{% trans 'Products' %}{% endif %}</h3>
 
             <div class="uk-grid-match uk-child-width-1-3@m" uk-grid>
                 {% for product in products %}
@@ -55,7 +57,7 @@
                                 <a class="uk-link-toggle" href="{{ product.get_absolute_url }}">
                                     <span class="uk-link-heading">{{ product.name }}</span>
                                 </a>
-                                <p>Price: {{ product.price }} $</p>
+                                <p>{% trans 'Price' %}: {{ product.price }} $</p>
                             </div>
                         </div>
                     </div>

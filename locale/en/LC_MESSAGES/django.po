@@ -1,0 +1,170 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-01-24 10:41+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: cart/forms.py:11 cart/templates/cart/detail.html:17
+#: orders/templates/orders/order/create.html:26
+msgid "Quantity"
+msgstr ""
+
+#: cart/templates/cart/detail.html:5 shop/templates/shop/base.html:31
+msgid "Cart"
+msgstr ""
+
+#: cart/templates/cart/detail.html:15
+msgid "Image"
+msgstr ""
+
+#: cart/templates/cart/detail.html:16
+#: orders/templates/orders/order/create.html:27
+msgid "Product"
+msgstr ""
+
+#: cart/templates/cart/detail.html:18
+msgid "Delete"
+msgstr ""
+
+#: cart/templates/cart/detail.html:19 shop/templates/shop/product/list.html:60
+msgid "Price"
+msgstr ""
+
+#: cart/templates/cart/detail.html:20
+#: orders/templates/orders/order/create.html:28
+msgid "Total Price"
+msgstr ""
+
+#: cart/templates/cart/detail.html:45
+msgid "Change"
+msgstr ""
+
+#: cart/templates/cart/detail.html:60
+msgid "Basic Price"
+msgstr ""
+
+#: cart/templates/cart/detail.html:66
+#, python-format
+msgid ""
+"\n"
+"                                \"%(code)s\" (%(discount)s%% discount)\n"
+"                            "
+msgstr ""
+
+#: cart/templates/cart/detail.html:74
+#: orders/templates/orders/order/create.html:52
+msgid "Total Cost"
+msgstr ""
+
+#: cart/templates/cart/detail.html:81
+msgid "Provide a coupon code to get a discount"
+msgstr ""
+
+#: cart/templates/cart/detail.html:85
+msgid "Submit a coupon"
+msgstr ""
+
+#: coupons/forms.py:6
+msgid "Coupon"
+msgstr ""
+
+#: ecommerce_project/settings.py:115
+msgid "english"
+msgstr ""
+
+#: ecommerce_project/settings.py:116
+msgid "polish"
+msgstr ""
+
+#: orders/models.py:11
+msgid "First Name"
+msgstr ""
+
+#: orders/models.py:12
+msgid "Last Name"
+msgstr ""
+
+#: orders/models.py:13
+msgid "E-mail"
+msgstr ""
+
+#: orders/models.py:14
+msgid "Address"
+msgstr ""
+
+#: orders/models.py:15
+msgid "Postal Code"
+msgstr ""
+
+#: orders/models.py:16
+msgid "City"
+msgstr ""
+
+#: orders/models.py:17
+msgid "Created"
+msgstr ""
+
+#: orders/models.py:18
+msgid "Updated"
+msgstr ""
+
+#: orders/models.py:19
+msgid "Paid"
+msgstr ""
+
+#: orders/models.py:22
+msgid "Discount"
+msgstr ""
+
+#: orders/templates/orders/order/create.html:4
+#: orders/templates/orders/order/create.html:10
+msgid "Checkout"
+msgstr ""
+
+#: orders/templates/orders/order/create.html:17
+msgid "Place Order"
+msgstr ""
+
+#: orders/templates/orders/order/create.html:43
+#, python-format
+msgid ""
+"\n"
+"                                        \"%(code)s\" (%(discount)s%% "
+"discount)\n"
+"                                    "
+msgstr ""
+
+#: shop/templates/shop/base.html:15 shop/templates/shop/base.html:20
+msgid "Tea Shop"
+msgstr ""
+
+#: shop/templates/shop/product/detail.html:39
+msgid "Add to cart"
+msgstr ""
+
+#: shop/templates/shop/product/list.html:9
+#: shop/templates/shop/product/list.html:37
+msgid "Products"
+msgstr ""
+
+#: shop/templates/shop/product/list.html:17
+msgid "Categories"
+msgstr ""
+
+#: shop/templates/shop/product/list.html:20
+msgid "All Products"
+msgstr ""

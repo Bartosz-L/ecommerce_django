@@ -15,7 +15,7 @@ COPY ./requirements.txt /app/
 
 # Install build dependencies
 RUN apk update \
-    && apk add --no-cache --virtual .build-deps gcc musl-dev \
+    && apk add --no-cache --virtual .build-deps gcc musl-dev gettext \
     && apk add jpeg-dev zlib-dev libjpeg cairo-dev pango-dev gdk-pixbuf
 
 # Install project dependencies
