@@ -7,3 +7,4 @@ django-paypal==1.0.0
 weasyprint==51
 django-grappelli==2.13.3
 django-rosetta==0.9.3
+django-localflavor==2.2
