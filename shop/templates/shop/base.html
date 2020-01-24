@@ -24,18 +24,29 @@
 
         <ul class="uk-navbar-nav">
 
+            {% get_current_language as LANGUAGE_CODE %}
+            {% get_available_languages as LANGUAGES %}
+            {% get_language_info_list for LANGUAGES as languages %}
+
             {% with total_items=cart|length %}
                 {% if cart|length > 0 %}
-                    <li class="uk-active">
+                    <li>
                         <a href="{% url "cart:cart_detail" %}">
                             {% trans "Cart" %}
                             <span class="uk-badge uk-margin-small-left uk-padding-small">{{ total_items }}</span>
                         </a>
                     </li>
+                    <ul class="uk-navbar-nav">
+                        {% for language in languages %}
+                            <li {% if language.code == LANGUAGE_CODE %}class="uk-active"{% endif %}>
+                                <a href="/{{ language.code }}">{{ language.code }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+
                 {% endif %}
             {% endwith %}
         </ul>
-
     </div>
 </header>
 <div class="uk-grid" uk-grid>
